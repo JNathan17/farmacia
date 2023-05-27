@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Iniciar Pedido Eletrônico</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    
+    <header>
+      <h1>Compra e Venda de Medicamentos</h1>
+    </header>
+  
+    <div id="main-content" class="dashboard">
+      <h2>Produtos Disponíveis</h2>
+      <div class="table-wrapper">
+        <table id="product-list">
+          <tr>
+            <th>Medicamento</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th>Disponibilidade</th>
+            <th>Quantidade</th>
+          </tr>
+          <tr>
+            <td>Aspirina</td>
+            <td>Medicamento para alívio de dores e febre.</td>
+            <td>R$12,00</td>
+            <td><span class="availability-dot available"></span></td>
+            <td><input type="number" id="aspirina-quantity" min="0" value="0"></td>
+          </tr>
+          <tr>
+            <td>Azitromicina</td>
+            <td>Medicamento antibiótico para tratamento de infecções bacterianas.</td>
+            <td>R$20,00</td>
+            <td><span class="availability-dot available"></span></td>
+            <td><input type="number" id="aspirina-quantity" min="0" value="0"></td>
+          </tr>
+          <tr>
+            <td>Dipirona</td>
+            <td>Medicamento analgésico e antitérmico.</td>
+            <td>R$10,00</td>
+            <td><span class="availability-dot available"></span></td>
+            <td><input type="number" id="aspirina-quantity" min="0" value="0"></td>
+          </tr>
+          <tr>
+            <td>Dorflex</td>
+            <td>Medicamento para alívio de dores musculares.</td>
+            <td>R$15,00</td>
+            <td><span class="availability-dot unavailable"></span></td>
+            <td><input type="number" id="aspirina-quantity" min="0" value="0"></td>
+          </tr>
+          <tr>
+            <td>Ibuprofeno</td>
+            <td>Medicamento anti-inflamatório e analgésico.</td>
+            <td>R$9,00</td>
+            <td><span class="availability-dot available"></span></td>
+            <td><input type="number" id="aspirina-quantity" min="0" value="0"></td>
+          </tr>
+          <tr>
+            <td>Omeprazol</td>
+            <td>Medicamento para tratamento de problemas gástricos.</td>
+            <td>R$18,00</td>
+            <td><span class="availability-dot available"></span></td>
+            <td><input type="number" id="aspirina-quantity" min="0" value="0"></td>
+          </tr>
+          <tr>
+            <td>Paracetamol</td>
+            <td>Medicamento analgésico e antitérmico.</td>
+            <td>R$8,00</td>
+            <td><span class="availability-dot unavailable"></span></td>
+            <td><input type="number" id="aspirina-quantity" min="0" value="0"></td>
+          </tr>
+          <tr>
+            <td>Ranitidina</td>
+            <td>Medicamento para tratamento de problemas de acidez no estômago.</td>
+            <td>R$13,00</td>
+            <td><span class="availability-dot unavailable"></span></td>
+            <td><input type="number" id="aspirina-quantity" min="0" value="0"></td>
+        </tr>
+        <tr>
+          <td>Vitamina C</td>
+          <td>Suplemento vitamínico para fortalecimento do sistema imunológico.</td>
+          <td>R$7,00</td>
+          <td><span class="availability-dot unavailable"></span></td>
+          <td><input type="number" id="aspirina-quantity" min="0" value="0"></td>
+        </tr>
+      </table>
+    </div>
+    <button class="submit-button" onclick="iniciarPedido()">Finalizar Pedido</button>
+  <br>
+  <footer>
+    <p>© 2023 Compra e Venda de Medicamentos. Todos os direitos reservados.</p>
+    <button class="back-button" onclick="goToHomePage()">Voltar para a página inicial</button>
+  </footer>
+
+  <script>
+      
+    function iniciarPedido() {
+      var dipironaQuantity = parseInt(document.getElementById("dipirona-quantity").value);
+      var dorflexQuantity = parseInt(document.getElementById("dorflex-quantity").value);
+      var azitromicinaQuantity = parseInt(document.getElementById("azitromicina-quantity").value);
+      var paracetamolQuantity = parseInt(document.getElementById("paracetamol-quantity").value);
+      var omeprazolQuantity = parseInt(document.getElementById("omeprazol-quantity").value);
+      var ranitidinaQuantity = parseInt(document.getElementById("ranitidina-quantity").value);
+      var vitaminaCQuantity = parseInt(document.getElementById("vitamina-c-quantity").value);
+      var aspirinaQuantity = parseInt(document.getElementById("aspirina-quantity").value);
+      var ibuprofenoQuantity = parseInt(document.getElementById("ibuprofeno-quantity").value);
+
+      // Aqui você pode realizar o processamento do pedido com as quantidades selecionadas
+      // e realizar as ações necessárias, como enviar os dados para um servidor, calcular o valor total, etc.
+
+      // Exemplo de exibição dos valores selecionados:
+      console.log("Dipirona: " + dipironaQuantity);
+      console.log("Dorflex: " + dorflexQuantity);
+      console.log("Azitromicina: " + azitromicinaQuantity);
+      console.log("Paracetamol: " + paracetamolQuantity);
+      console.log("Omeprazol: " + omeprazolQuantity);
+      console.log("Ranitidina: " + ranitidinaQuantity);
+      console.log("Vitamina C: " + vitaminaCQuantity);
+      console.log("Aspirina: " + aspirinaQuantity);
+      console.log("Ibuprofeno: " + ibuprofenoQuantity);
+    }
+    function goToHomePage() {
+        // Redirecionar para a página inicial
+        window.location.href = "index.html";
+      }
+  </script>
+</body>

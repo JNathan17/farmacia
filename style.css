@@ -1,0 +1,190 @@
+/* Estilos para o site */
+
+html, body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  #main-content {
+    min-height: 100%;
+    position: relative;
+    margin-left: 20px;
+  }
+  
+  h2 {
+    margin-top: 0;
+  }
+  
+  .product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .buy-button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  footer {
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #333;
+    text-align: center;
+  }
+  .availability-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  .availability-dot.available {
+    background-color: green;
+  }
+  
+  .availability-dot.unavailable {
+    background-color: red;
+  }
+
+   /* Estilos CSS para a tabela */
+   table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* Estilos CSS para o botão */
+  .submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .submit-button:hover {
+    background-color: #45a049;
+  }
+  .dashboard {
+      max-height: 400px;
+      overflow-y: scroll;
+    }
+    .availability-dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 5px;
+      padding: 8px;
+      
+    }
+    
+    .navbar {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+      }
+  
+      .navbar ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+  
+      .navbar li {
+        display: inline-block;
+        margin-right: 10px;
+      }
+  
+      .navbar a {
+        color: #fff;
+        text-decoration: none;
+        padding: 5px;
+      }
+  
+      .navbar a:hover {
+        color: #f00;
+      }
+
+      .search-box {
+        text-align: center;
+        margin-top: 50px;
+      }
+  
+      .search-box input[type="text"] {
+        padding: 10px;
+        width: 300px;
+      }
+  
+      .search-box button {
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+      }
+  
+      /* Estilos CSS da lista de distribuidoras */
+      .distributors-list {
+        margin-top: 50px;
+      }
+  
+      .distributor {
+        margin-bottom: 10px;
+      }
+
+      .distributors-list {
+        margin-top: 50px;
+        max-height: 200px;
+        overflow: auto;
+      }
+  
+      .distributor {
+        margin-bottom: 10px;
+      }
+
+      .pedido{
+          color: #fff;
+          background-color: #333;
+          
+      }
+      .fecharP{
+          color: #fff;
+        text-decoration: none;
+      }
+
+      footer {
+        background-color: #333;
+        padding: 8px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+      }
+  
+      

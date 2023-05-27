@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Compra e Venda de Medicamentos</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Compra e Venda de Medicamentos</h1>
+      </header>
+      <div class="navbar">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Produtos</a></li>
+          <li><a href="#">Carrinho</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+  
+      <div id="main-content">
+        <div class="search-box">
+          <input type="text" placeholder="Digite o nome do medicamento...">
+          <button>Buscar</button>
+        </div>
+  
+        <div id="main-content" class="dashboard">
+            
+            <div class="table-wrapper">
+              <table id="product-list">
+                <tr>
+                  <th>Distribuidora</th>
+                  <th>Cidade</th>
+                  <th>Contato</th>
+                  <th>Disponibilidade</th>
+                  <th>Pedido</th>
+                </tr>
+                <tr>
+                  <td>Distribuidora 1</td>
+                  <td>Cajazeiras</td>
+                  <td>1111111</td>
+                  <td><span class="availability-dot available"></span></td>
+                  <td><button class="pedido"><a href="novoPedido.html" class="fecharP">Fechar Pedido</a></button></td>
+                </tr>
+                <tr>
+                  <td>Distribuidora 2</td>
+                  <td>Sao joao do rio do peixe</td>
+                  <td>2222222</td>
+                  <td><span class="availability-dot available"></span></td>
+                  <td><button class="pedido"><a href="novoPedido.html" class="fecharP">Fechar Pedido</a></button></td>
+                </tr>
+                <tr>
+                  <td>Distribuidora 3</td>
+                  <td>Sousa</td>
+                  <td>3333333</td>
+                  <td><span class="availability-dot available"></span></td>
+                  <td><button class="pedido"><a href="novoPedido.html" class="fecharP">Fechar Pedido</a></button></td>
+                </tr>
+                <tr>
+                  <td>Distribuidora 4</td>
+                  <td>Triunfo</td>
+                  <td>4444444</td>
+                  <td><span class="availability-dot unavailable"></span></td>
+                  <td><button class="pedido"><a href="novoPedido.html" class="fecharP">Fechar Pedido</a></button></td>
+                </tr>
+                <tr>
+                  <td>Distribuidora 5</td>
+                  <td>Uirauna</td>
+                  <td>5555555</td>
+                  <td><span class="availability-dot available"></span></td>
+                  <td><button class="pedido"><a href="novoPedido.html" class="fecharP">Fechar Pedido</a></button></td>
+                </tr>
+                <tr>
+                  <td>Distribuidora 6</td>
+                  <td>Patos</td>
+                  <td>666666</td>
+                  <td><span class="availability-dot available"></span></td>
+                  <td><button class="pedido"><a href="novoPedido.html" class="fecharP">Fechar Pedido</a></button></td>
+                </tr>
+            </table>
+            
+            <footer>
+                <p>© 2023 Compra e Venda de Medicamentos. Todos os direitos reservados.</p>
+                
+              </footer>
+  </body>
+  
+    <script>
+        var cart = {};
+      
+        function addToCart(nome, preco, inputId) {
+            var quantity = parseInt(document.getElementById(inputId).value);
+            var availabilityElement = document.querySelector(`#${inputId} ~ .availability-dot`);
+            var availability = parseInt(availabilityElement.textContent);
+        
+            if (quantity > 0 && quantity <= availability) {
+              if (cart[nome]) {
+                cart[nome].quantity += quantity;
+              } else {
+                cart[nome] = {
+                  quantity: quantity,
+                  price: preco
+                };
+              }
+        
+              updateCart();
+              availabilityElement.textContent = availability - quantity;
+        
+              alert("Produto adicionado ao carrinho com sucesso!");
+            } else if (quantity > availability) {
+              alert("Quantidade selecionada superior à disponível.");
+            } else {
+              alert("Selecione uma quantidade válida.");
+            }
+          }
+        
+          function updateCart() {
+            var cartItems = document.getElementById("cart-items");
+            var total = 0;
+        
+            // Limpar os itens do carrinho
+            cartItems.innerHTML = "";
+        
+            // Atualizar os itens do carrinho
+            for (var item in cart) {
+              var quantity = cart[item].quantity;
+              var price = cart[item].price;
+              var subtotal = quantity * price;
+        
+              var listItem = document.createElement("li");
+              listItem.innerText = quantity + "x " + item + " - R$" + subtotal.toFixed(2);
+              cartItems.appendChild(listItem);
+        
+              total += subtotal;
+            }
+        
+            // Atualizar o total do carrinho
+            var totalElement = document.getElementById("cart-total");
+            totalElement.innerText = total.toFixed(2);
+          }
+        </script>
